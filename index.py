@@ -5,6 +5,17 @@ from pyrogram import Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import tempfile
 from pyrogram.types import InputMediaPhoto
+import os
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bot está funcionando!"
+
+if __name__ == "__main__":
+    port = os.getenv("PORT", 10000)  # Porta definida pelo Render, ou 10000 se não definida.
+    app.run(host="0.0.0.0", port=port)
 
 
 TOKEN = "7417349320:AAETj2PU3KwnQJOQARAQWNwoKdRQWoMjIWA"
