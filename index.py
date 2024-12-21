@@ -7,6 +7,18 @@ import tempfile
 from pyrogram.types import InputMediaPhoto
 import os
 from flask import Flask
+import logging
+
+# Configura o logger para gerar logs
+logging.basicConfig(level=logging.DEBUG)
+
+# Exemplo de log
+logging.debug("Isso é um log de debug.")
+logging.info("Isso é um log de informação.")
+logging.warning("Isso é um log de advertência.")
+logging.error("Isso é um log de erro.")
+logging.critical("Isso é um log crítico.")
+
 app = Flask(__name__)
 
 @app.route('/')
